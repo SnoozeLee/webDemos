@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 200px;
+    min-height: 60px;
+    border: solid 1px black;
+    position: relative;
+}
+
+.moveCircle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: solid 2px wheat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+.moveCircle img {
+    position: absolute;
+    left: 0;
+    top: 0;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>magnifyingGlass</title>
+    <link rel="stylesheet" href="magnifyingGlass.css">
+</head>
+<body>
+    <div class="container">
+        <img src="pic1.jpg" width="100%" alt="">
+        <div class="moveCircle">
+            <img src="pic1.jpg" width="1200%" alt="">
+        </div>
+    </div>
+    <div>magnification: <b id="magnificationTab"></b></div>
+
+    <script>
+        // 获取元素对象
+        const container = document.querySelector('.container');
+        const moveCircle = document.querySelector('.moveCircle');
+        const bigImg = document.querySelector('.moveCircle img');
+        const magnificationTab = document.getElementById("magnificationTab");
+        let magnification = bigImg.offsetWidth / container.offsetWidth;
+        magnificationTab.innerText = magnification.toFixed(3);
+        // 绑定container的鼠标移动事件
+        container.addEventListener('mousemove', function(e){
+            // 水平方向操作
+            // 获取鼠标位置
+            let x = e.clientX;              // 鼠标距离左侧的偏移
+            let l = container.offsetLeft;   // container 距离左侧的偏移
+            let moveCircleLeft = x-l-moveCircle.offsetWidth/2;           // 计算出放大镜离左侧的距离
+
+            // 边界检测
+            let maxMoveLeft = container.offsetWidth - moveCircle.offsetWidth;
+            if(moveCircleLeft <= 0) moveCircleLeft = 0;
+            else if(moveCircleLeft >= maxMoveLeft) moveCircleLeft = maxMoveLeft;
+            
+            // 放大镜图片位置
+            let circleImgLeft = -(moveCircleLeft+moveCircle.offsetWidth/2)*magnification
+                                + moveCircle.offsetWidth/2; 
+            
+            // 设置
+            moveCircle.style.left = moveCircleLeft + 'px';
+            bigImg.style.left = circleImgLeft+'px';
+            
+            // 竖直方向操作
+            let y = e.clientY;              // 鼠标距离上侧的偏移
+            let t = container.offsetTop;     // container 距离上侧的偏移
+            let moveCircleTop = y-t-moveCircle.offsetHeight/2;
+
+            // 边界检测
+            let maxMoveTop = container.offsetHeight - moveCircle.offsetHeight;
+            if(moveCircleTop <= 0) moveCircleTop = 0;
+            else if(moveCircleTop >= maxMoveTop) moveCircleTop = maxMoveTop;
+
+            // 放大镜图片位置
+            let circleImgTop = -(moveCircleTop+moveCircle.offsetHeight/2)*magnification
+                                + moveCircle.offsetHeight/2;
+
+            // 设置
+            moveCircle.style.top = moveCircleTop + "px";
+            bigImg.style.top = circleImgTop + "px";
+        })
+    </script>
+
+</body>
+</html>
