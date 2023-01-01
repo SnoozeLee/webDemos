@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #222;
+}
+
+.total {
+    position: absolute;
+    width: 1100px;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: Arial, Helvetica, sans-serif;
+    color: seashell;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.total {
+    perspective: 16px;
+    /* transform-style: preserve-3d; */
+    perspective-origin: center center;
+    transition: .4s ease-out;
+}
+
+.card1, .card2, .card3, .card4, .card5 {
+    transform-style: preserve-3d;
+    width: 200px;
+    height: 130px;
+    background-color: #5588dd;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    opacity: 0;
+    transition: 1s ease-in-out;
+}
+
+.card1 {
+    transform: translateZ(-50px) rotateY(-10deg);
+}
+.card2 {
+    transform: translateZ(-10px) rotateY(-3deg);
+}
+.card3 {
+    opacity: 0.9;
+    transform: translateZ(-2px) ;
+}
+.card4 {
+    transform: translateZ(-10px) rotateY(3deg);
+}
+.card5 {
+    transform: translateZ(-50px) rotateY(10deg);
+}
+
+.total:hover {
+    perspective: 1000px;
+}
+.total:hover .card1, 
+.total:hover .card2,
+.total:hover .card3,
+.total:hover .card4,
+.total:hover .card5 
+{
+    opacity: 1;
+}
+
+.card1:hover, 
+.card2:hover, 
+.card3:hover, 
+.card4:hover, 
+.card5:hover {
+    transition: 0.2s ease-out;
+    font-size: larger;
+    box-shadow: 0 0 10px 2px #6cf;
+}
