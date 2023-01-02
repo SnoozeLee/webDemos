@@ -1,0 +1,338 @@
+:root {
+    --dark-brown: #2d2623;
+    /* --dark-blue: #2236cc; */
+    --dark-blue: #22366c;
+    --med-blue: #294679;
+    --light-blue: #439abf;
+    --stars: #e9ae4b;
+    --bg: #c9533d;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+*::before, *::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+}
+
+body {
+    background-color: var(--bg);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+}
+
+.window {
+    width: 275px;
+    height: 440px;
+    background-color: var(--med-blue);
+    border: 20px solid var(--dark-brown);
+    border-bottom: none;
+    position: relative;
+}
+
+.window::before {
+    position: absolute;
+    bottom: 0;
+    transform: translateX(-30px);
+    width: calc(100% + 60px);   /* 注意加号两边有空格calc才生效 */
+    border-left: 20px solid var(--med-blue);
+    border-right: 20px solid var(--med-blue);
+    height: 8px;
+    background-color: var(--light-blue);
+}
+
+.window::after {
+    width: calc(100% + 60px);
+    height: 13px;
+    bottom: -13px;
+    transform: translateX(-30px);
+    background-color: var(--dark-brown);
+}
+
+.window-left {
+    position: absolute;
+    height: 100%;
+    width: 10px;
+    background-color: var(--light-blue);
+    z-index: 100;
+}
+
+.window-right {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 10px;
+    background-color: var(--light-blue);
+    z-index: 101;
+}
+
+.window-middle {
+    position: absolute;
+    top: 48%;
+    height: 20px;
+    width: 100%;
+    z-index: 200;
+    background-color: var(--dark-brown);
+}
+.window-middle::before {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    background-color: var(--light-blue);
+}
+
+.mountain {
+    border-bottom: 60px solid var(--dark-blue);     /* 底部边框为山的主体 */
+    border-left: 20px solid transparent;            /* 左右边框挤出山峰 */
+    border-right: 20px solid transparent;           /* 左右边框挤出山峰 */
+    width: min-content;
+    /* 由以上代码生成一个60px高, 40px宽的小山 */
+    position: absolute;
+    z-index: 0;
+    bottom: 8px;
+}
+
+.mountain:nth-child(1) {
+    left: 0px;
+}
+.mountain:nth-child(2) {
+    left: 20px;
+}
+.mountain:nth-child(3) {
+    left: 40px;
+}
+.mountain:nth-child(4) {
+    right: -5px;
+}
+.mountain:nth-child(5) {
+    right: 15px;
+}
+
+.moon {
+    position: absolute;
+    left: 25px;
+    top: 42px;
+    background-color: var(--stars);
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+}
+
+.moon::before {
+    background-color: var(--med-blue);
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    transform: translateX(15px);
+}
+
+.clouds, .clouds::before, .clouds::after {
+    position: absolute;
+    width: 150px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--dark-blue);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100px
+}
+
+.clouds::before {
+    top: -20px;
+    width: 60px;
+    transform: translateX(10px);
+}
+
+.clouds::after {
+    top: 20px;
+    width: 80px;
+    transform: translateX(-60px);
+}
+
+.clouds span {
+    position: absolute;
+    top: 10px;
+    height: 10px;
+    width: 40px;
+    left: 30px;
+    background-color: var(--dark-blue);
+}
+
+.clouds span:nth-child(2) {
+    top: -10px;
+    left: 100px;
+    width: 30px;
+}
+
+.clouds span::before, .clouds span::after {
+    transform: translateX(-5px);
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--med-blue);
+}
+.clouds span::after {
+    right: 0;
+    transform: translateX(5px);
+}
+
+.stars {
+    position: relative;
+    /* width: 100%;
+    height: 100%; */
+}
+.star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--stars);
+    animation: shine 3s ease-in-out 1s infinite alternate;
+}
+
+.star::before, .star::after {
+    left: 33px;
+    top: 44px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: var(--stars);
+    /* animation: shine 3s ease-in-out 1s infinite alternate; */
+}
+.star::after {
+    left: 50px;
+    top: -12px;
+}
+
+@keyframes shine {
+    0% {
+        box-shadow: 0 0 0 0 var(--stars);
+    }
+    50% {
+        box-shadow: 0 0 3px 3px var(--stars);
+    }
+}
+
+.star1 {
+    left: 100px;
+    top: 33px;
+    width: 8px;
+    height: 8px;
+}
+
+.star2 {
+    left: 150px;
+    top: 40px;
+}
+
+.star3 {
+    left: 34px;
+    top: 300px;
+}
+
+.star4 {
+    left: 136px;
+    top: 258px;
+    width: 4px;
+    height: 4px;
+}
+
+.star5 {
+    left: 44px;
+    top: 100px;
+}
+
+.cat {
+    position: absolute;
+    box-sizing: border-box;
+    bottom: -3px;
+    left: 50%;
+    width: 100px;
+    transform: translateX(-40%);
+}
+.cat .cat-body {
+    position: absolute;
+    /* border: 1px solid goldenrod; */
+    border-radius: 20% 50% 50% 0;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: var(--dark-brown);
+    animation: breath-belly 15s ease-in-out 2s infinite;
+}
+@keyframes breath-belly {
+    0% {
+        transform: scale(1.0);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.cat .head {
+    position: absolute;
+    background-color: var(--dark-brown);
+    bottom: 50px;
+    width: 50px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    animation: stretch 10s ease 3s infinite;
+}
+@keyframes stretch {
+    0% {
+        bottom: 50px;
+    }
+    /* 开始伸展脖子 */
+    50% {
+        bottom: 80px;
+    }
+    /* 迅速收回脖子 */
+    55% {
+        bottom: 50px;
+    }
+    /* 等待 */
+}
+.ear-left, .ear-right{
+    position: absolute;
+    border-bottom: 16px solid var(--dark-brown);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    transition:.3s;
+    top: -3px;
+}
+.cat .head:hover .ear-left, .cat .head:hover .ear-right {
+    top: 1px;
+}
+.ear-left{
+    left: -7px;
+    transform: rotateZ(-45deg);
+}
+
+.ear-right {
+    right: -7px;
+    transform: rotateZ(45deg); 
+}
+
+.cat .tail {
+    position: absolute;
+    height: 110px;
+    width: 13px;
+    background-color: var(--dark-brown);
+    border-radius: 8px;
+    left: 50%;
+    transform: translateX(-5px);
+    bottom: -100px;
+}
