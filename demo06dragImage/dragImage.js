@@ -36,18 +36,41 @@ window.addEventListener("mousemove", (e)=>{
         let moveX = e.pageX - ceData.pageX0;
         let moveY = e.pageY - ceData.pageY0;
 
+        ceData.leftEnd = ceData.left0 + moveX;
+        ceData.topEnd = ceData.top0 + moveY;
         cloneElement.style.left = `${ceData.left0 + moveX}px`;
         cloneElement.style.top = `${ceData.top0 + moveY}px`;
+
+        let distance = Math.hypot(moveX, moveY);    // hypotenuse 直接三角形的斜边
+        const base = 500;
+        cloneElement.style.scale = (base+distance)/base;
     }
 })
 
 window.addEventListener("mouseup", (e)=>{
+
+    if(isDragging) {
+        if(inWallDetection(e.pageX)) {
+            // 鼠标在wall内释放，则将图片放入wall
+            document.getElementById("wall").appendChild(cloneElement);
+            // 这个appendChild是会删掉cloneElement原来的父节点的(也就是说自动从#list里面删除了)
+            cloneElement.style.left =  `${ceData.leftEnd-270}px`;
+        }
+        else {
+            // 不在wall内释放，则删除这个节点
+            document.getElementById("list").removeChild(cloneElement);
+        }
+        queue.shift()();
+    }
     isDragging = false;
+
 })
 
-function doit() {
-    // 测试按钮，目前用来检验 queue队列执行方法
-    console.log("doit");
-    queue.shift()();
+function inWallDetection(x) {
+    // 目前先简单地用鼠标位置x判断
+    if(x>270) {
+        // 270 是写死的slide宽度
+        return true;
+    }
 }
 
