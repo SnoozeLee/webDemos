@@ -1,0 +1,55 @@
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-color: lightsalmon;
+}
+
+#hot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border: 2px solid darkolivegreen;
+    height: 200px;
+    width: 100px;
+
+    /* 瓶子 标签 的 颜色 */
+    /* 原作者此处darken了 */
+    background-color: lemonchiffon;
+
+    background-image:  
+        /* 我也好奇这3em是哪里来的，为何不用百分比？ */
+        linear-gradient(to bottom, yellowgreen 3em, transparent 3em),
+        /* 一点暗部遮罩 */
+        linear-gradient(#00000020, #00000020),
+        /* 一圈椭圆光晕 -> 标签上面小瓶子的瓶身 */
+        radial-gradient(ellipse, yellowgreen 40%, #ffffff00 45%),
+        /* yellogreen竖线 -> 标签上面小瓶子的瓶颈 */
+        linear-gradient(to right, transparent 40%,
+                                  yellowgreen 40%,
+                                  yellowgreen 60%,
+                                  transparent 60%);
+    background-repeat: no-repeat, no-repeat, repeat-x, repeat-x;
+
+    /* 分别设置上面四个background-image */
+    background-size: 
+        100% 100%,
+        25% 38%,
+        10% 15%,
+        10% 8%;
+    background-position: 
+        0 0,
+        100% 70%,
+        50% 32%,
+        50% 30%;
+
+    border-radius: 40px;
+    /* 我所猜测radius两个参数：x方向的半径 y方向的半径 */
+    border-bottom-left-radius: 50px 15px;
+    border-bottom-right-radius: 50px 15px;
+    
+
+}
