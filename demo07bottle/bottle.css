@@ -122,7 +122,8 @@ body {
     width: calc(100% - 10px);
     height: calc(100% - 150px + 70px);
     transform: translateY(-70px);
-    border: 2px solid black;
+    /* 一开始留了个框线，做完瓶颈的时候本想删掉的，结果产生了偏移，只好设置成透明的了 */
+    border: 2px solid transparent;
 
     background-repeat: no-repeat;
 
@@ -149,8 +150,13 @@ body {
         /* 瓶颈下部黄绿色 */
         linear-gradient(yellowgreen, yellowgreen),
         /* 边框颜色 */
-        linear-gradient(darkolivegreen, darkolivegreen)
+        linear-gradient(darkolivegreen, darkolivegreen),
         /* --------------- 10行分界线 --------------- */
+        /* 底部两点高亮 */
+        radial-gradient(ellipse, rgba(255, 255, 255, .8) 40%, rgba(255, 255, 255, 0) 45%),
+        radial-gradient(ellipse, rgba(255, 255, 255, .8) 40%, rgba(255, 255, 255, 0) 45%),
+        /* 底部瓶子的凹陷 */
+        radial-gradient(ellipse, rgba(85, 107, 47, 0.719) 55%, transparent 60%)
     ;
     background-size: 
         1em .9em,
@@ -165,9 +171,11 @@ body {
         .3em 26px,
         36% 29px,
         36% 29px,
-        calc(36% + 4px) 40px
+        calc(36% + 4px) 40px,
         /* --------------- 10行分界线 --------------- */
-        
+        8px 5px,
+        8px 5px,
+        80% 9px
     ;
     background-position: 
         47% 23px,
@@ -180,7 +188,10 @@ body {
         63% 47px,
         48% 48px,
         48% 48px,
-        48% 28px
+        48% 28px,
         /* --------------- 10行分界线 --------------- */
+        27% 98%,
+        38% 98%,
+        50% 99.9%
     ;
 }
