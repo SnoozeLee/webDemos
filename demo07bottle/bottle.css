@@ -108,3 +108,79 @@ body {
         ;
 
 }
+
+#hot::after {
+    content: "chile jalapeño";
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    text-align: left;
+    color: darkolivegreen;
+
+    position: absolute;
+    padding-left: 10px; 
+    padding-top: 150px;
+    width: calc(100% - 10px);
+    height: calc(100% - 150px + 70px);
+    transform: translateY(-70px);
+    border: 2px solid black;
+
+    background-repeat: no-repeat;
+
+    background-image: 
+    /* 先画瓶颈部分 */
+        /* 瓶颈椭圆光斑 ellipse at top center 可以只画出半圆 */
+        radial-gradient(ellipse at top center, rgba(255, 255, 255, .4) 40%, rgba(255, 255, 255, 0) 45%),
+        /* 瓶身光斑上部 */
+        radial-gradient(ellipse at bottom center, rgba(255, 255, 255, .7) 30%, rgba(255, 255, 255, 0) 32%),
+        /* 瓶身光斑下部 */
+        radial-gradient(ellipse at top center, rgba(255, 255, 255, .6) 30%, rgba(255, 255, 255, 0) 32%),
+
+        /* 瓶颈左侧阴影 */
+        linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)),
+        /* 瓶颈右侧高亮 */
+        linear-gradient(rgba(255, 255, 255, .6), rgba(255, 255, 255, .6)),
+        /* --------------- 5行分界线 --------------- */
+        /* 瓶颈主要颜色 */
+        linear-gradient(darkolivegreen, darkolivegreen),
+        /* 瓶颈下部高亮 */
+        linear-gradient(rgba(255, 255, 255, .6), rgba(255, 255, 255, .6)),
+        /* 瓶颈下部阴影 */
+        linear-gradient(to right, rgba(0, 0, 0, .1) 40%, rgba(0, 0, 0, 0) 40%),
+        /* 瓶颈下部黄绿色 */
+        linear-gradient(yellowgreen, yellowgreen),
+        /* 边框颜色 */
+        linear-gradient(darkolivegreen, darkolivegreen)
+        /* --------------- 10行分界线 --------------- */
+    ;
+    background-size: 
+        1em .9em,
+        /* 稍微拉短曲面的光斑 */
+        2em 4em,
+        /* 稍微拉长平面的光斑 */
+        2em 6em,
+        .5em 30px,
+        .3em 30px,
+        /* --------------- 5行分界线 --------------- */
+        calc(36% + 4px) 32px,
+        .3em 26px,
+        36% 29px,
+        36% 29px,
+        calc(36% + 4px) 40px
+        /* --------------- 10行分界线 --------------- */
+        
+    ;
+    background-position: 
+        47% 23px,
+        70% 65px,
+        70% 129px,  /* 129 也是慢慢调出来的 */
+        34% 20px,
+        63% 20px,
+        /* --------------- 5行分界线 --------------- */
+        48% 20px,
+        63% 47px,
+        48% 48px,
+        48% 48px,
+        48% 28px
+        /* --------------- 10行分界线 --------------- */
+    ;
+}
