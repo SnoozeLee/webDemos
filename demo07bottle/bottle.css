@@ -13,14 +13,18 @@ body {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     border: 2px solid darkolivegreen;
+    /* border-top: none; */
     height: 200px;
     width: 100px;
 
     /* 瓶子 标签 的 颜色 */
     /* 原作者此处darken了 */
-    background-color: lemonchiffon;
+    /* background-color: lemonchiffon; */
+    /* 直接从原图上取色了 */
+    background-color: #fff7b4;
 
     background-image:  
+        /* 顶部瓶子的颜色 */
         /* 我也好奇这3em是哪里来的，为何不用百分比？ */
         linear-gradient(to bottom, yellowgreen 3em, transparent 3em),
         /* 一点暗部遮罩 */
@@ -51,5 +55,28 @@ body {
     border-bottom-left-radius: 50px 15px;
     border-bottom-right-radius: 50px 15px;
     
+    box-shadow: 
+        /* 左下角高光 */
+        inset 1em -.6em 0 -1em white,
+        /* 右下角高光 */
+        inset -1em -.6em 0 -1em white,    
+        /* 底部一小段液体 */
+        inset 0 -.3em 0 0 rgba(85, 107, 47, 0.349),
+        inset 0 -.5em 0 #e6dd7f,
 
+        /* 左侧阴影 */
+        inset .6em 0 0 -.1em rgba(0, 0, 0, 0.26),
+        inset 2.1em 0 0 rgba(0, 0, 0, 0.1),
+        /* 右侧阴影 */
+        inset -.7em 0 0 -.1em rgba(0, 0, 0, 0.158),
+
+        /* 底部阴影 - 在底部一小段液体的上面 */
+        inset 0 -2.2em 0 -1.5em rgba(85, 107, 47, 0.459),
+
+        /* 便签的下面以及标签下面的瓶子颜色 */
+        inset 0 -7.2em 0 -5em yellowgreen,
+        inset 0 -7.7em 0 -5.2em #fff7b4,
+        inset 0 -9.2em 0 -6.5em yellowgreen,
+        inset 0 -10em 0 -7em lemonchiffon
+    ;
 }
