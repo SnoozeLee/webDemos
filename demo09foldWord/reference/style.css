@@ -1,0 +1,61 @@
+
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background: #eee;
+}
+.main{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+
+}
+    h1{
+		transform: skew(10deg) rotate(-10deg); /* 变型及旋转 */
+		font-size: 20vw;    /* 20vw代表尺寸为浏览器窗口宽度的20% */
+        font-family: Arial, Helvetica, sans-serif;
+		font-weight: bold;
+		color:rgba(0,102,204,0.7);
+	    transition: 0.5s linear;
+    }
+        h1::before {
+            content: attr(data-text);
+            position: absolute; /* 与文字完全重合 */
+            left: 0;
+            top: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 50%;  /* 高度为原尺寸的一半，默认显示文字的上半部分 */
+            color: #EEE;
+            transition:0.5s linear;
+        }
+        
+        h1::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            color: #eee;
+            transition:0.5s linear;
+            clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%); /* 利用剪切路径显示文字的下半部分 */
+        }
+h1:hover{
+    text-shadow:1px 3px 6px #fff,0 0 0 #000,1px 3px 6px #fff; /* 阴影加上半透明的背景颜色模拟凹陷效果 */
+}
+h1:hover::after{
+    transform:skew(13deg) scale(1, 0.8); /* 水平平移加垂直方向上的缩放，模拟折起的效果 */
+    color: #d3cfcc;
+    text-shadow: 2px -1px 6px rgba(0,0,0,0.3);
+}
+h1:hover::before{
+    color: #fbf7f4;
+    top:-4.8%; /* 变型后会造成底边移动，通过调整位置让底边保持原位 */
+    transform: translate(1.6vw, 0) skew(-13deg) scale(1, 1.2); /* 通过变型移动及缩放模拟折起效果 */
+    text-shadow: 2px -1px 6px rgba(0,0,0,0.2);
+}

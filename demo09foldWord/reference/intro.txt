@@ -1,0 +1,5 @@
+参考自b站up主 flashaxe 的视频：纯CSS制作折纸文字特效
+https://www.bilibili.com/video/BV1Hz4y1m7Eb
+
+reference 目录下的代码文件为up主提供，链接为
+https://gitee.com/flashaxe/webcode/blob/master/fold%20text.zip
