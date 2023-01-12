@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skew</title>
+    <style>
+        body {
+            background-color: #111;
+            padding: 100px;
+            /* display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 100px; */
+        }
+        .test {
+            width: 200px;
+            height: 100px;
+            background-color: #5ce;
+            text-align: center;
+        }
+        .t2 {
+            transform: skewY(30deg);
+            background-color: #fff;
+        }
+        .t3 {
+            transform: skewY(-30deg) translateY(20px);
+            background-color: #fff;
+        }
+        .t4 {
+            transform: skewX(-30deg);
+            background-color: #cf5;
+        }
+        .little {
+            width: 40px;
+            height: 40px;
+            background-color: #ddd;
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            transform: skewX(30deg);
+            font-size: xx-small;
+            word-wrap: break-word;
+        }
+        .t6{
+            transform: skewY(10deg);
+            background-color: #f6c;
+        }
+        .t7 {
+            transform: skewY(-10deg);
+            background-color: #f6c;
+        }
+        .t8 {
+            transform: skewX(30deg);
+        }
+        .t9 {
+            transform: skewX(-30deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="test t1">1 </div>
+    <div class="test t2">2 skewY(30deg)</div>
+    <div class="test t3">3 </div>
+    <div class="test t4">4 skewX(-30deg)<div class="little">skewX(30deg)</div></div>
+    <div class="test t5">5 </div>
+    <div class="test t6">6 skewY(10deg)</div>
+    <div class="test t7">7 skewY(-10deg)</div>
+    <div class="test t8">8 skewX(30deg);</div>
+    <div class="test t9">9 skewX(-30deg);</div>
+</body>
+</html>
