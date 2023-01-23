@@ -56,6 +56,10 @@ body::-webkit-scrollbar {
 
     box-shadow: 0 0 0 100vw #111;
 }
+
+#logo_text_bg {
+    transition: .5s linear;
+}
 .video-div {
     width: 100vw;
     height: 100vh;

@@ -24,9 +24,30 @@
 
 let pageDom = document.querySelector(".page-main");
 let logo = document.querySelector("#FinFET_logo");
+let textBg = document.querySelector("#logo_text_bg");
 
 pageDom.addEventListener("scroll", e => {
     let scrollPercent = pageDom.scrollTop / (pageDom.scrollHeight - pageDom.clientHeight);
     console.log(scrollPercent);
     logo.style.width = `${20 + scrollPercent*scrollPercent*scrollPercent*1000}vw`;
+
+    // 设置#logo_text_bg的颜色淡出
+    // 需配合 css属性 transition: .5s linear;
+    if (scrollPercent<=.4) {
+        textBg.style.opacity = 1;
+    } else {
+        textBg.style.opacity = 0;
+    }
+
+    // 设置芯片淡出
+    if (scrollPercent <=.8) {
+        logo.style.opacity = 1;
+    }
+    else if(scrollPercent <=.9) {
+        logo.style.opacity = .5;
+    } 
+    else {
+        logo.style.opacity = 0;
+    }
+
 })
