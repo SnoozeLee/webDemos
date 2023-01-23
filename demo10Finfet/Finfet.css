@@ -45,7 +45,7 @@ body::-webkit-scrollbar {
 
 #FinFET_logo {
     position: absolute;
-    border: 2px solid white;
+    /* border: 2px solid white; */
     box-sizing: border-box;
     border-radius: 10%;
     top: 50%;

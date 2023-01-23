@@ -32,11 +32,16 @@
                 <rect x="0" y="100" width="1000" height="800" style="fill: #fff" opacity="1.0" id="logo_text_bg"/>
             
                 <rect x="0" y="0" width="1000" height="1000"
-                    ry="50" 
-                    rx="50"
-                    style="fill: black;  mask: url(#FinFET)" 
+                    ry="100" 
+                    rx="100"
+                    style="
+                        fill: black;
+                        mask: url(#FinFET);
+                        stroke: white;
+                        stroke-width: 50;
+                    " 
                 />
-                <!-- stroke: white; stroke-width: 20; -->
+                <!-- 上面的rx ry 需要和外容器的border-radius配合好， 同时stroke-width不要设置的太小 -->
             </svg> 
             <div class="video-div">
                 <video preload="metadata" 
