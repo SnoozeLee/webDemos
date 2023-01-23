@@ -44,21 +44,22 @@
                 <!-- 上面的rx ry 需要和外容器的border-radius配合好， 同时stroke-width不要设置的太小 -->
             </svg> 
             <div class="video-div">
-                <video preload="metadata" 
-                    muted 
+                <video 
+                    id="mixclip-video"
+                    muted
                     autoplay
                     playsinline
                     loop
                     src="MixClipVideo.mp4"
                     style="opacity: 1;"
                     >
-                    <!-- playsinline 是为了手机上也直接播放 -->
+                    <!-- playsinline 是为了手机上也直接播放? -->
                 </video>    
             </div>
         </div> 
         <div class="blank_holder">占位元素</div> 
     </div>  
-    <!-- <div class="page page-end"></div> -->
+    <div class="page page-end"></div>
 
 </body>
 <script src="Finfet.js"></script>
