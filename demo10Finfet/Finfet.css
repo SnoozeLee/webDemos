@@ -43,6 +43,10 @@ body::-webkit-scrollbar {
     overflow: hidden    ;
 }
 
+#FinFET {
+    font-family:  sans-serif;
+}
+
 #FinFET_logo {
     position: absolute;
     /* border: 2px solid white; */
