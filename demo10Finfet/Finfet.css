@@ -12,10 +12,25 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+.container {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    /* 设置滚动贴合容器 */
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+.container::-webkit-scrollbar {
+    display: none;
+}
+
 .page {
     box-sizing: border-box;
     width: 100vw;
     height: 100vh;
+
+    /* 设置滚动贴合 */
+    scroll-snap-align: start;
 }
 
 .page-start {
