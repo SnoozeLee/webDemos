@@ -1,6 +1,3 @@
-<!-- <video class="art-video" preload="metadata" crossorigin="anonymous" autoplay="" src="https://vd4.bdstatic.com/mda-mj7ip23wmcvix06u/sc/cae_h264_nowatermark/1633699958637005643/mda-mj7ip23wmcvix06u.mp4?v_from_s=hkapp-haokan-hnb&amp;auth_key=1673840465-0-0-345661e27782a6a32bc716dbfaa96ae6&amp;bcevod_channel=searchbox_feed&amp;pd=1&amp;cd=0&amp;pt=3&amp;logid=0665380315&amp;vid=8915035009393269695&amp;abtest=106846_1-106847_2-106991_2&amp;klogid=0665380315"></video>
-
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,55 +8,56 @@
     <link rel="stylesheet" href="Finfet.css">
 </head>
 <body>
-    <div class="page page-start"></div>
-    <div class="page page-main">
-        <div id="video-chip">
-            <svg
-                viewBox="0 0 1000 1000"
-                id="FinFET_logo"
-            >
-                <defs>
-                    <mask id="FinFET"
-                    x="0" y="0" width="100%" height="100%">
-                        <rect x="0" y="0" width="100%" height="100%" fill="#fff"/>
-                        <text x="50%"  y="55%" style="fill: #000" text-anchor="middle" font-size="240"
-                            font-weight="800"
-                        >FinFET</text>
-                        <text x="50%"  y="66%" style="fill: #000" text-anchor="middle" font-size="100">1 4 n m</text>
-                    </mask>
-                </defs>
-            
-                <rect x="0" y="100" width="1000" height="800" style="fill: #fff" opacity="1.0" id="logo_text_bg"/>
-            
-                <rect x="0" y="0" width="1000" height="1000"
-                    ry="100" 
-                    rx="100"
-                    style="
-                        fill: black;
-                        mask: url(#FinFET);
-                        stroke: white;
-                        stroke-width: 50;
-                    " 
-                />
-                <!-- 上面的rx ry 需要和外容器的border-radius配合好， 同时stroke-width不要设置的太小 -->
-            </svg> 
-            <div class="video-div">
-                <video 
-                    id="mixclip-video"
-                    muted
-                    autoplay
-                    playsinline
-                    loop
-                    src="MixClipVideo.mp4"
-                    style="opacity: 1;"
-                    >
-                    <!-- playsinline 是为了手机上也直接播放? -->
-                </video>    
-            </div>
-        </div> 
-        <div class="blank_holder">占位元素</div> 
-    </div>  
-    <div class="page page-end"></div>
+    <div class="container">
+        <div class="page page-start"></div>
+        <div class="page page-main">
+            <div id="video-chip">
+                <svg
+                    viewBox="0 0 1000 1000"
+                    id="FinFET_logo"
+                >
+                    <defs>
+                        <mask id="FinFET"
+                        x="0" y="0" width="100%" height="100%">
+                            <rect x="0" y="0" width="100%" height="100%" fill="#fff"/>
+                            <text x="50%"  y="55%" style="fill: #000" text-anchor="middle" font-size="240"
+                                font-weight="800"
+                            >FinFET</text>
+                            <text x="50%"  y="66%" style="fill: #000" text-anchor="middle" font-size="100">1 4 n m</text>
+                        </mask>
+                    </defs>
+                
+                    <rect x="0" y="100" width="1000" height="800" style="fill: #fff" opacity="1.0" id="logo_text_bg"/>
+                
+                    <rect x="0" y="0" width="1000" height="1000"
+                        ry="100" 
+                        rx="100"
+                        style="
+                            fill: black;
+                            mask: url(#FinFET);
+                            stroke: white;
+                            stroke-width: 50;
+                        " 
+                    />
+                    <!-- 上面的rx ry 需要和外容器的border-radius配合好， 同时stroke-width不要设置的太小 -->
+                </svg> 
+                <div class="video-div">
+                    <video 
+                        id="mixclipvideo"
+                        muted
+                        autoplay
+                        loop
+                        src="MixClipVideo.mp4"
+                        >
+                        <!-- playsinline 是为了手机上也直接播放? -->
+                    </video>    
+                </div>
+            </div> 
+            <div class="blank_holder">占位元素</div> 
+        </div>  
+        <div class="page page-end"></div>    
+    </div>
+    
 
 </body>
 <script src="Finfet.js"></script>

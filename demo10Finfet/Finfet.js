@@ -25,7 +25,7 @@
 let pageDom = document.querySelector(".page-main");
 let logo = document.querySelector("#FinFET_logo");
 let textBg = document.querySelector("#logo_text_bg");
-let mixclipVideo = document.querySelector("#mixclip-video");
+let mixclipVideo = document.querySelector("#mixclipvideo");
 
 pageDom.addEventListener("scroll", e => {
     let scrollPercent = pageDom.scrollTop / (pageDom.scrollHeight - pageDom.clientHeight);
