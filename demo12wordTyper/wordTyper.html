@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字打印效果</title>
+</head>
+<body>
+    <h1>文字打印效果</h1>
+    <div id="wordContainer"></div>
+</body>
+<script>
+    const wordDom = document.querySelector("#wordContainer");
+    const text = "用来打印的文字内容";
+    function setDomTyper(dom, text, speed, textEndIndex = 0) {
+        dom.innerHTML = text.slice(0, textEndIndex);
+
+        textEndIndex = textEndIndex > text.length ? 0 : textEndIndex + 1;
+        setTimeout(()=>{
+            setDomTyper(dom, text, speed, textEndIndex)
+        }, speed);
+    }
+    setDomTyper(wordDom, text, 500);
+
+</script>
+</html>
