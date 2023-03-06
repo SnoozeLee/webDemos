@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>毛玻璃效果</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        #bg-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .glass-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            border-radius: 2rem;
+            min-height: 10rem;
+            height: 40%;
+            width: 80%;
+            z-index: 100;
+            text-align: center;
+
+            /* 下面做毛玻璃的效果 */
+            background-color: rgba(240, 240, 240, .2);
+            backdrop-filter: blur(2px);
+
+            /* 加点阴影 */
+            box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.511);
+
+            /* 优化布局 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        h1 {
+            color: seashell;
+            letter-spacing: 1rem;
+        }
+
+        .img-quote, .img-quote > a {
+            color: rgba(255, 245, 238, 0.86);
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <img id="bg-img" src="./night-pixabay.jpg" alt="">
+    <div class="glass-container">
+        <h1>毛玻璃效果</h1>
+        <div class="img-quote">Image by <a
+                href="https://pixabay.com/users/michael_pointner-28601164/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7593233">Michael
+                Pointner</a> from <a
+                href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7593233">Pixabay</a>
+        </div>
+    </div>
+</body>
+
+</html>
