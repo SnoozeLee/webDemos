@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "B站防刷下一条",
+    "version": "1.0",
+    "description": "把B站的下一条视频的控件删掉",
+    "icons": {
+        "48": "icons/border-48.png",
+        "96": "icons/border-96.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.bilibili.com/video/*"
+            ],
+            "js": [
+                "removeNext.js"
+            ]
+        }
+    ],
+    "browser_specific_settings": {
+        "snoozeBilibili": {
+            "id": "somebody@email.com"
+        }
+    }
+}
