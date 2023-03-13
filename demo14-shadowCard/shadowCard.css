@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ececec;
+}
+
+.card {
+    /* border: 1px solid black; */
+    background-color: #ececec1d;
+    width: 9rem;
+    height: 15rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 6rem;
+    color: rgba(0, 0, 0, 0.876);
+
+
+    animation: cardWave 5s linear infinite alternate;
+    /* alternate: 自动反转 */
+}
+
+@keyframes cardWave {
+    0% {
+        /* 高光和阴影 */
+        box-shadow: 
+            3rem 0rem 3rem rgba(255, 255, 255, 0.712) inset, 
+            -.3rem -.3rem .3rem white , 
+            .3rem .3rem .3rem rgb(111, 110, 110)
+        ;
+        transform: perspective(1200px) rotateY(-30deg);
+    }
+    50% {
+        /* 高光和阴影 */
+        box-shadow: none;
+        transform: perspective(1200px) rotateY(0deg);
+    }
+    100% {
+        /* 高光和阴影 */
+        box-shadow: 
+            -3rem 0rem 3rem rgba(255, 255, 255, 0.712) inset, 
+            .3rem -.3rem .3rem white , 
+            -.3rem .3rem .3rem rgb(111, 110, 110)
+        ;
+        transform: perspective(1200px) rotateY(30deg);
+    }
+}
+
